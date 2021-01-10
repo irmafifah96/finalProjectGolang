@@ -30,6 +30,15 @@
 						<input type="hidden" name="_token" value="{{$.token}}">
 					</form>
 					
+					{{if eq .Publish 1}}
+					<form class="button-form" method="post" action="{{$.CurrentURI}}/{{.ArticleID}}?_method=delete">
+						<button type="submit" class="btn btn-success" title="Publish" id="publish" name="sb" value="1"/>	
+							<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Publish
+						</button>
+					</form>
+					{{ else }}
+					{{ end }}
+					
 				</div>
 				<span class="pull-right" style="margin-top: 14px;">{{PRETTYTIME .CreatedAt .UpdatedAt}}</span>
 			</div>
